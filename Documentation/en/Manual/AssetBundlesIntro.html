@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: AssetBundles</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="cloud" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetBundlesIntro.html">English</a></li>
+<li><a href="/cn/current/Manual/AssetBundlesIntro.html">中文</a></li>
+<li><a href="/ja/current/Manual/AssetBundlesIntro.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AssetBundlesIntro.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetBundlesIntro.html">English</a></li>
+<li><a href="/cn/current/Manual/AssetBundlesIntro.html">中文</a></li>
+<li><a href="/ja/current/Manual/AssetBundlesIntro.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AssetBundlesIntro.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="AssetWorkflow.html">Asset workflow</a></li>
+<li>AssetBundles</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="DefaultPresetsByFolder.html"></a></span><div class="tip">Applying default presets to Assets by folder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetBundles-Workflow.html"></a></span><div class="tip">AssetBundle workflow</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>AssetBundles</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>An <strong>AssetBundle</strong> is an archive file that contains platform-specific non-code Assets (such as Models, Textures, Prefabs, Audio clips, and even entire Scenes) that Unity can load at run time. AssetBundles can express dependencies between each other; for example, a Material in one AssetBundle can reference a Texture in another AssetBundle. For efficient delivery over networks, you can compress AssetBundles with a choice of built-in algorithms depending on use case requirements (LZMA and LZ4).</p>
+
+<p>AssetBundles can be useful for downloadable content (DLC), reducing initial install size, loading assets optimized for the end-user’s platform, and reduce runtime memory pressure.</p>
+
+<p>An AssetBundle built for any of the standalone platforms can only be loaded on that platform. For example, a bundle built on iOS is not compatible with Android.
+One reason for this is that <span class="tooltip"><strong>Shaders</strong><span class="tooltiptext">A program that runs on the GPU. <a class="tooltipMoreInfoLink" href="Shaders.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Shader">Glossary</a></span></span></span>, Textures and other types of data are built into platform-specific formats based on the <a href="../ScriptReference/BuildTarget.html">BuildTarget</a>.</p>
+
+<p>When you build or rebuild AssetBundles, you typically build all of the project’s AssetBundles together using a single API call. It is usually best not to build or rebuild them individually, because when built together, the Unity Editor makes decisions about how to reference or embed content in each AssetBundle which can depend on what is included in other AssetBundles. The exception to this is if you’re an advanced user who understands the references and dependencies among the AssetBundles in your project, in which case you can sometimes build just a subset of your project’s AssetBundles.</p>
+
+<h2>What’s inside an AssetBundle?</h2>
+
+<p>Because the APIs that you use to load AssetBundles are designed to be simple, they abstract away the details of how data is represented inside AssetBundles. However it can be useful to understand the structure, especially if you use tools to extract or examine the contents of an AssetBundle.</p>
+
+<p>The AssetBundle is a container file format, similar to a zip file. It has a binary-format header and embeds additional files inside it. These additional files consist of two types:</p>
+
+<ul>
+<li>Serialized files, which contains serialized Unity objects. This is the same binary file format used in Player Builds. In the case of an AssetBundle containing Assets all the objects are written to a single Serialized File. For AssetBundles containing Scenes there are two serialized files per <span class="tooltip"><strong>Scene</strong><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene">Glossary</a></span></span></span>, one with the objects from the scene hierarchy and the second with any referenced objects.</li>
+<li>Resource files, which are chunks of binary data stored separately for certain Assets (textures and audio). This separation allows Unity to efficiently load them from disk using multi-threaded code.</li>
+</ul>
+
+<p>The AssetBundle file always includes a serialized <a href="../ScriptReference/AssetBundle.html">AssetBundle</a> object. This object acts like a directory for the contents of the AssetBundle. This is the object you interact with via code to load Assets from a specific AssetBundle archive, and it is also used internally when loading Assets from AssetBundles with the Addressables API.</p>
+
+<h2>Backward compatibility</h2>
+
+<p>When an AssetBundle is built, the objects that are included are serialized using the definition from the version of the Unity Editor you used to build it, as well as the C# types defined in the Project that is built. The information for each type is recorded inside the AssetBundle in a structure called the <em>Type Tree</em>. This type information contributes somewhat to the size of the AssetBundle, but it is critical to enabling loading those objects when the version of the player does not match the Editor version at the time of the build. For many Unity features the types are quite stable and only change in minor ways between versions so the backward compatibility support works well. However in cases where Unity features change substantially it may not be possible to load the old data in a way that achieves the expected results in the newer version. In that case, you must rebuild the AssetBundle using the new version of Unity.</p>
+
+<p>Unity does not support forward-compatibility, so loading an AssetBundle built with a new version of Unity into a Player that was built with an older version of Unity is likely to have trouble loading the content.</p>
+
+<p>
+<strong>Note:</strong> By default the version of the Unity Editor that was used to build the file is included inside the AssetBundle header. This information can be useful when investigating backward compatibility issues. However, it can also result in AssetBundles being rebuilt unnecessarily, and cause unnecessary client downloads if a project is rebuilt after doing a minor upgrade of the Editor. To avoid this, you can exclude the Editor version, see <a href="../ScriptReference/BuildAssetBundleOptions.AssetBundleStripUnityVersion.html">BuildAssetBundleOptions.AssetBundleStripUnityVersion</a>.</p>
+
+<h2>Support for Script Objects</h2>
+
+<p>AssetBundles do not contain assemblies and are not used to distribute new C# classes or changes to existing classes. Rather, it is the Player Build that contains the compiled assemblies. This means to release code changes, you must rebuild and redistribute the main build of your game or app.</p>
+
+<p>However, you can use AssetBundles to distribute new objects that are instances of the classes compiled into your Player build, such as new items for a game.</p>
+
+<p>For example, AssetBundles can include ScriptableObject Assets. When you load that Asset from the AssetBundle Unity finds the matching class definition, based on the assembly name, namespace and class name. It creates an object that is an instance of that class and sets the fields of the object using the serialized values.</p>
+
+<p>If the object was serialized based on an older definition of the class then Unity will use its backward compatibility support to match up whatever fields it can, based on the field names and other info recorded in the Type Tree.</p>
+
+<p>Scripts often use <a href="PlatformDependentCompilation.html">Conditional Compilation</a> to specify platform-specific code. For example, using scripting symbols like UNITY_STANDALONE, UNITY_IOS and UNITY_ANDROID. If fields on a class or struct are not compiled on some targets then the serialization of objects inside the AssetBundle will not include those fields (and they will not be included in the Type Tree). This is another reason that AssetBundles must be rebuilt for each platform that you target.</p>
+
+<h2>Methods of building AssetBundles</h2>
+
+<p>There are two supported APIs to build AssetBundles for Unity:</p>
+
+<ul>
+<li>Using built-in native APIs, e.g. <code>BuildPipeline.BuildAssetBundles</code>, <code>AssetBundle</code> and <code>UnityWebRequestAssetBundle</code>. This is the functionality described in this section of the Manual. However this method is quite low-level, for example it requires that you understand Asset dependencies, determine bundle assignments yourself and write your own build script.</li>
+<li>Using the <a class="tooltipMoreInfoLink" href="http://docs.unity3d.com/Packages/com.unity.addressables@latest/index.html">Addressables</a> package. This is the recommended, more user friendly option, and makes it possible to define and build AssetBundles directly from the Addressables <span class="tooltip"><strong>UI</strong><span class="tooltiptext">(User Interface) Allows a user to interact with your application. Unity currently supports three UI systems. <a href="UI-system-compare.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#UI">Glossary</a></span></span></span>. It uses the same underlying file format and the same low-level Unity loading and caching services, but indirectly via a higher-level, more abstract API. So, while many of the concepts describes in this section apply to AssetBundles used with Addressables, you should refer to the Addressables documentation for practical usage information.</li>
+</ul>
+<!-- area:cloud -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="DefaultPresetsByFolder.html"></a></span><div class="tip">Applying default presets to Assets by folder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetBundles-Workflow.html"></a></span><div class="tip">AssetBundle workflow</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

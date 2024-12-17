@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Structure of a Unity Xcode Project</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="platforms" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/StructureOfXcodeProject.html">English</a></li>
+<li><a href="/cn/current/Manual/StructureOfXcodeProject.html">中文</a></li>
+<li><a href="/ja/current/Manual/StructureOfXcodeProject.html">日本語</a></li>
+<li><a href="/kr/current/Manual/StructureOfXcodeProject.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/StructureOfXcodeProject.html">English</a></li>
+<li><a href="/cn/current/Manual/StructureOfXcodeProject.html">中文</a></li>
+<li><a href="/ja/current/Manual/StructureOfXcodeProject.html">日本語</a></li>
+<li><a href="/kr/current/Manual/StructureOfXcodeProject.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PlatformSpecific.html">Platform development  </a></li>
+<li><a href="iphone.html">iOS</a></li>
+<li><a href="ios-introducing.html">Introducing iOS</a></li>
+<li>Structure of a Unity Xcode Project</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="how-unity-builds-ios-applications.html"></a></span><div class="tip">How Unity builds iOS applications</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="iphone-GettingStarted.html"></a></span><div class="tip">Getting started with iOS</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Structure of a Unity Xcode Project</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>When you build a Unity Project for the iOS platform, Unity creates a folder that contains an Xcode project. You need this project to compile and sign your app before you deploy it on a device. You also need to use it to prepare and bundle your game for distribution on the App Store. The Xcode project structure has changed as of Unity 2019.3 to support Unity integration into native iOS applications via <a href="UnityasaLibrary-iOS.html">Unity as a Library</a>.</p>
+
+<p>Before you build your Project for iOS, make sure that you set the <strong>Bundle Identifier</strong> in the iOS <span class="tooltip"><a class="tooltipMoreInfoLink" href="class-PlayerSettingsiOS.html#other">Player Settings</a><span class="tooltiptext">Settings that let you set various player-specific options for the final game built by Unity. <a href="class-PlayerSettings.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#PlayerSettings">Glossary</a></span></span></span> (menu: <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player Settings</strong>). You can also choose whether your app targets the simulator or an actual device. To do this, change the <strong>SDK version</strong> field.</p>
+
+<h2>Project Targets</h2>
+
+<p>Every generated Unity iOS Xcode project has the following structure and targets:</p>
+
+<figure>
+<img src="../uploads/Main/Unity-iPhone-Project-Folder.png" alt="">
+</figure>
+
+<ul>
+<li>
+<strong>UnityFramework</strong>: A library part in the <strong>UnityFramework</strong> target. It includes the <em>Classes</em>, <em>UnityFramework</em>, and <em>Libraries</em> folders, as well as dependent frameworks, andXcode uses it to build the <em>UnityFramework.framework</em> file.</li>
+<li>
+<strong>GameAssembly:</strong> A container for your C# code translated as C++ code. To build it, Xcode uses the IL2CPP tool that Unity includes in every generated Xcode project. The build produces:
+
+<ul>
+<li>
+<code>libGameAssembly.a</code>: A static library that contains all the project’s managed code, cross-compiled to C++, and built for iOS.</li>
+<li>
+<code>il2cpp.a</code>: A static library that contains the <span class="tooltip"><a class="tooltipMoreInfoLink" href="IL2CPP.html">IL2CPP</a><span class="tooltiptext">A Unity-developed scripting back-end which you can use as an alternative to Mono when building projects for some platforms. <a href="IL2CPP.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#IL2CPP">Glossary</a></span></span></span> runtime code to support your managed code.</li>
+</ul>
+</li>
+<li>
+<strong>Unity-iPhone</strong>: A thin launcher part in the <strong>Unity-iPhone</strong> target. It includes the <em>MainApp</em> folder and app representation data such as Launch Screens, <em>.xib</em> files, icons, data, and <em>/Info.plist</em> files, and it runs the library. The <strong>Unity-iPhone</strong> target has a single dependency on the <strong>UnityFramework</strong> target.</li>
+</ul>
+
+<h2>Classes folder</h2>
+
+<p>The <em>Classes</em> folder contains code that integrates the Unity Runtime and Objective-C. Unity stores the entry points of the application in the <em>main.mm</em> and <em>UnityAppController.mm/h</em> files inside this folder. You can create your own AppDelegate derived from UnityAppController, or, if any of your <span class="tooltip"><strong>plug-ins</strong><span class="tooltiptext">A set of code created outside of Unity that creates functionality in Unity. There are two kinds of plug-ins you can use in Unity: Managed plug-ins (managed .NET assemblies created with tools like Visual Studio) and Native plug-ins (platform-specific native code libraries). <a class="tooltipMoreInfoLink" href="Plugins.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Plug-in">Glossary</a></span></span></span> include <em>AppController.h</em>, you can include <em>UnityAppController.h</em> instead. If your <em>Plugins/iOS</em> folder includes_ AppController.mm/h_, you can merge and rename them.</p>
+
+<p>The <em>InternalProfiler.h</em> file also defines a compiler conditional to enable the Internal <span class="tooltip"><strong>Profiler</strong><span class="tooltiptext">A window that helps you to optimize your game. It shows how much time is spent in the various areas of your game. For example, it can report the percentage of time spent rendering, animating, or in your game logic. <a class="tooltipMoreInfoLink" href="Profiler.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Profiler">Glossary</a></span></span></span>. The code in this folder doesn’t change often, and you can place custom classes here. If you select the <strong>Append</strong> mode, Xcode preserves changes to this folder between builds. However, this function doesn’t support multiple build targets and requires a fixed structure of the <em>Libraries</em> folder.</p>
+
+<p>Unity’s internal Profiler is fast and unobtrusive, and feeds basic information about:</p>
+
+<ul>
+<li>Which subsystem is taking most of the frame time.</li>
+<li>The .NET heap size.</li>
+<li>GC event count and duration.</li>
+</ul>
+
+<p>For more information, see documentation about the <a href="iphone-InternalProfiler.html">built-in Profiler</a>.</p>
+
+<h2>Data folder</h2>
+
+<p>This folder contains your application’s serialized assets, as well as .NET assemblies (.dll or .dat files) as either full code or metadata, depending on code stripping settings. The <em>machine.config</em> file sets up various .NET services such as security and WebRequest. Xcode refreshes the contents of this folder with every build. You shouldn’t make any changes to it.</p>
+
+<p>By default, the <em>Data</em> folder’s <strong>Target Membership</strong> is the <strong>Unity-iPhone</strong> target, and Unity Runtime searches for it in the <code>mainBundle</code>. To change the default bundle where Unity Runtime looks for the <em>Data</em> folder, call <code>setDataBundleId: &quot;com.my.product&quot;</code> on the UnityFramework instance before you call one of the run functions. For example, if you want to have <em>Data</em> together with the UnityFramework call, use <code>setDataBundleId: &quot;com.unity3d.framework&quot;</code> and set the <strong>Target Membership</strong> to <strong>UnityFramework</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/Xcode-Data-Folder.png" alt="">
+</figure>
+
+<p>
+<strong>Note:</strong> On-Demand Resources are only supported when the <em>Data</em> folder is a part of the Application target and not a part of the UnityFramework target. </p>
+
+<h2>Libraries folder</h2>
+
+<p>The <em>Libraries</em> folder contains <em>libil2cpp.a</em> for IL2CPP. The <em>libiPhone-lib.a</em> file is the Unity Runtime static library, and <em>RegisterMonoModules.cpp</em> binds Unity native code with .NET. Xcode and refreshes the contents of this folder with every build. You shouldn’t make any changes to it.</p>
+
+<h2>Custom folders</h2>
+
+<p>You can place your custom files here.</p>
+
+<h2>Graphic files</h2>
+
+<p>Icons and splash screens (.png files) are located in asset catalogs in the <em>Unity-iPhone</em> folder. Unity automatically manages these files. Launch Screens, their XML Interface Builders (.xib files), and Storyboard files are stored in the Project’s root folder. To set them up in Unity use the <strong>Player</strong> <strong>Settings</strong> window (menu: <strong>Edit &gt; Project Settings &gt; Player Settings</strong>). When you create custom launch images, make sure they adhere to Apple’s <a href="https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/">Human Interface Guidelines</a>.</p>
+
+<h2>Property List (.plist) file</h2>
+
+<p>You can manage the <em>/Info.plist</em> file within the Unity-iPhone target (accessed via <code>mainBundle</code>) from Unity’s <strong>Player Settings</strong> (menu: <strong>Edit &gt; Project Settings &gt; Player Settings</strong>, then select the <strong>Other</strong> section and scroll down to the <strong>Identification</strong> section; for more details, see documentation on <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/PlayerSettingsiOS-Other.html#Identification">iOS Player settings - Identification</a>). When Unity builds the Player, it updates this file rather than replacing it. Don’t make changes to it unless you have to.</p>
+
+<p>The <em>/UnityFramework/Info.plist</em> file (accessed via <code>bundleWithIdentifier:@&quot;com.unity3d.framework&quot;</code>) is a part of UnityFramework. You can keep values here instead of mainBundle’s <em>/Info.plist</em> file to make sure that you can still get these values if UnityFramework is moved into another application.</p>
+
+<h2>Other files</h2>
+
+<p>These include the Xcode project file (<em>.xcodeproj</em> file), and framework links that only appear in the <strong>Project Navigator</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/Xcode-Other-Files.png" alt="">
+</figure>
+
+<h4>Building an Xcode project with xcodebuild</h4>
+
+<p>When you use command line arguments to specify build settings, these affect all Xcode project targets. To prevent this, some build settings have suffixed versions which you can use to specify which target your build settings affect. This is implemented through User-Defined Settings (*<em>APP suffix used for application target and *</em>FRAMEWORK suffix for framework target). </p>
+
+<p>When building with xcodebuild, use suffixed versions for:</p>
+
+<p>PRODUCT_NAME -&gt; PRODUCT_NAME_APP</p>
+
+<p>PROVISIONING_PROFILE -&gt; PROVISIONING_PROFILE_APP</p>
+
+<p>PROVISIONING_PROFILE_SPECIFIER -&gt; PROVISIONING_PROFILE_SPECIFIER_APP</p>
+
+<p>OTHER_LDFLAGS -&gt; OTHER_LDFLAGS_FRAMEWORK</p>
+
+<p>Based on your custom build pipeline, you can extend the list to cover other settings.</p>
+
+<h4>Modifying an Xcode project</h4>
+
+<p>To modify a generated Xcode project, use <a href="../ScriptReference/iOS.Xcode.PBXProject.html">Xcode.PBXProject</a>.</p>
+
+<h2>Project Targets</h2>
+
+<p>As of Unity 2019.3, <code>PBXProject.GetUnityTargetName</code> and <code>pbxProject-&gt;TargetGuidByName(&quot;Unity-iPhone&quot;)</code> are obsolete. Instead, you can use either <code>pbxProject-&gt;GetUnityFrameworkTargetGuid()</code>, or <code>pbxProject-&gt;GetUnityMainTargetGuid()</code>:</p>
+
+<pre><code>// Obsolete
+string targetGuid = proj.TargetGuidByName(&quot;Unity-iPhone&quot;);
+string targetGuid = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+
+// Instead call one of these
+string targetGuid = proj.GetUnityFrameworkTargetGuid(); 
+string targetGuid = proj.GetUnityMainTargetGuid();
+</code></pre>
+
+<p>If you need to support both old and new code paths in your package or custom build postprocessor, follow these steps:</p>
+
+<ol>
+<li>Rely on plugin importer capabilities whenever possible (for example, to specify additional frameworks).</li>
+<li>Use reflection:</li>
+</ol>
+
+<pre><code>string mainTargetGuid;
+string unityFrameworkTargetGuid;
+        
+var unityMainTargetGuidMethod = proj.GetType().GetMethod(&quot;GetUnityMainTargetGuid&quot;);
+var unityFrameworkTargetGuidMethod = proj.GetType().GetMethod(&quot;GetUnityFrameworkTargetGuid&quot;);
+                
+if (unityMainTargetGuidMethod != null &amp;&amp; unityFrameworkTargetGuidMethod != null)
+{
+    mainTargetGuid = (string)unityMainTargetGuidMethod.Invoke(proj, null);
+    unityFrameworkTargetGuid = (string)unityFrameworkTargetGuidMethod.Invoke(proj, null);
+}
+else
+{
+    mainTargetGuid = proj.TargetGuidByName (&quot;Unity-iPhone&quot;);
+    unityFrameworkTargetGuid = mainTargetGuid;
+}
+</code></pre>
+
+<ul>
+<li>
+<span class="page-history">Unity as a Library for iOS added in <a href="https://docs.unity3d.com/Manual/30_search.html?q=newin20193">2019.3</a>.</span><span class="search-words">NewIn20193</span>
+</li>
+</ul>
+<!-- area:platforms -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="how-unity-builds-ios-applications.html"></a></span><div class="tip">How Unity builds iOS applications</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="iphone-GettingStarted.html"></a></span><div class="tip">Getting started with iOS</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

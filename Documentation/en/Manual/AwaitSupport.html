@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Await support</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AwaitSupport.html">English</a></li>
+<li><a href="/cn/current/Manual/AwaitSupport.html">中文</a></li>
+<li><a href="/ja/current/Manual/AwaitSupport.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AwaitSupport.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AwaitSupport.html">English</a></li>
+<li><a href="/cn/current/Manual/AwaitSupport.html">中文</a></li>
+<li><a href="/ja/current/Manual/AwaitSupport.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AwaitSupport.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="ScriptingSection.html">Scripting</a></li>
+<li><a href="ScriptingConcepts.html">Scripting concepts</a></li>
+<li>Await support</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NullReferenceException.html"></a></span><div class="tip">Null Reference Exceptions</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingImportantClasses.html"></a></span><div class="tip">Important Classes </div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Await support</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity 2023.1 introduces support for a simplified asynchronous programming model using C# async and await keywords. Most of Unity’s asynchronous API supports the async/await pattern, including:</p>
+
+<ul>
+<li>Unity Coroutines: <a href="../ScriptReference/Awaitable.NextFrameAsync.html">NextFrameAsync</a>, <a href="../ScriptReference/Awaitable.WaitForSecondsAsync.html">WaitForSecondsAsync</a>, <a href="../ScriptReference/Awaitable.EndOfFrameAsync.html">EndOfFrameAsync</a>, <a href="../ScriptReference/Awaitable.FixedUpdateAsync.html">FixedUpdateAsync</a>)</li>
+<li>Switching to <a href="../ScriptReference/Awaitable.BackgroundThreadAsync.html">Background Thread</a> or <a href="../ScriptReference/Awaitable:MainThreadAsync.html">Main Thread</a>
+</li>
+<li>All types inheriting from <a href="../ScriptReference/AsyncOperation.html">AsyncOperation</a>
+</li>
+<li><a href="UnityEvents.html">Unity Events</a></li>
+<li><a href="../ScriptReference/Rendering.AsyncGPUReadback.html">Async GPU Readback</a></li>
+</ul>
+
+<p>You can also use the <a href="../ScriptReference/Awaitable.html">Awaitable</a> class with both the await keyword and as an <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/async">async</a> return type in your own code, like this:</p>
+
+<pre><code class="lang-csharp">async Awaitable&lt;List&lt;Achievement&gt;&gt; GetAchivementsAsync()
+{
+    var apiResult = await SomeMethodReturningATask(); // or any await-compatible type
+    JsonConvert.DeserializeObject&lt;List&lt;Achievement&gt;&gt;(apiResult);
+}
+
+async Awaitable ShowAchievementsView()
+{
+    ShowLoadingOverlay();
+    var achievements = await GetAchievementsAsync();
+    HideLoadingOverlay();
+    ShowAchivementsList(achievements);
+}
+</code></pre>
+
+<h2>System.Threading.Task vs UnityEngine.Awaitable</h2>
+
+<p>Unity’s <a href="../ScriptReference/Awaitable.html">Awaitable</a> class is designed to be as efficient as possible for use in Unity game or app projects, however this efficiency comes with some trade-offs compared with <a href="https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks">.NET tasks</a>. The most significant limitation is that <code>Awaitable</code> instances are pooled to limit allocations. For example, consider the following example:</p>
+
+<pre><code class="lang-csharp">class SomeMonoBehaviorWithAwaitable : MonoBehavior
+{
+    public async void Start()
+    {
+        while(true)
+        {
+            // do some work on each frame
+            await Awaitable.NextFrameAsync();
+        }
+    }
+}
+</code></pre>
+
+<p>Without pooling, each instance of this behavior would allocate an Awaitable object each frame. This would put a lot of pressure on the garbage collector causing performance to suffer. To mitigate that, once awaited, Unity returns the <code>Awaitable</code> object to the internal Awaitable pool. This has one significant implication: you should never await more than once on an Awaitable instance. Doing so can result in undefined behavior such as an exception or a deadlock.</p>
+
+<p>The following table lists the other notable differences and similarities between Unity’s <code>Awaitable</code> class and .NET Tasks.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"> </th>
+	<th style="text-align:left;">System.Threading.Task</th>
+	<th style="text-align:left;">UnityEngine.Awaitable</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Can be awaited multiple times</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">No</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Can return a value</td>
+	<td style="text-align:left;">Yes, using System.Threading.Task&lt;T&gt;</td>
+	<td style="text-align:left;">Yes, using UnityEngine.Awaitable&lt;T&gt;</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Completion can be triggered by code</td>
+	<td style="text-align:left;">Yes, using System.Threading.TaskCompletionSource</td>
+	<td style="text-align:left;">Yes, using UnityEngine.AwaitableCompletionSource</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Continuation are run asynchronously</td>
+	<td style="text-align:left;">Yes, by default using the synchronization context, otherwise using the ThreadPool</td>
+	<td style="text-align:left;">No, continuation is run synchronously when completion is triggered</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Awaitable, continuations and SynchronizationContext</h2>
+
+<p>As shown in the table above, <code>Awaitable</code> continuations are run synchronously when the operation completes. When not documented otherwise, all Awaitables returned by Unity APIs complete on the main thread, so there is no need to capture a synchronization context. However, you can write your code to do otherwise. See the following example:</p>
+
+<pre><code class="lang-csharp">private async Awaitable&lt;float&gt; DoSomeHeavyComputationInBackgroundAsync()
+{
+    await Awaitable.BackgroundThreadAsync();
+    // do some heavy math here
+    return 42; // this will make the returned awaitable complete on a background thread
+}
+
+public async Awaitable Start()
+{
+    var computationResult = await DoSomeHeavyComputationInBackgroundAsync();
+    await SceneManager.LoadSceneAsync(&quot;my-scene&quot;); // this will fail as SceneManager.LoadAsync only works from main thread
+}
+</code></pre>
+
+<p>To improve the situation, you should make sure your Awaitable-returning methods complete on the main thread by default. Here is an example where <code>DoSomeHeavyComputationInBackgroundAsync</code> completes on the main thread by default, while allowing callers to explicitly continue on the background thread (to chain heavy compute operations on a background thread without synchronizing back to the main thread):</p>
+
+<pre><code class="lang-csharp">private async Awaitable&lt;float&gt; DoSomeHeavyComputationInBackgroundAsync(bool continueOnMainThread = true)
+{
+    await Awaitable.BackgroundThreadAsync();
+    // do some heavy math here
+    float result = 42;
+
+    // by default, switch back to main thread:
+    if(continueOnMainThread){
+        await Awaitable.MainThreadAsync();
+    }
+    return result;
+}
+
+public async Awaitable Start()
+{
+    var computationResult = await DoSomeHeavyComputationInBackgroundAsync();
+    await SceneManager.LoadSceneAsync(&quot;my-scene&quot;); // this is ok!
+}
+</code></pre>
+
+<h2>AwaitableCompletionSource</h2>
+
+<p>AwaitableCompletionSource and AwaitableCompletionSource&lt;T&gt; allows creations of Awaitable instances where completion is raised from user code. For example this can be used to elegantly implement user prompts without having to implement a state machine to wait for the user interaction to finish:</p>
+
+<pre><code class="lang-csharp">
+public class UserNamePrompt : MonoBehavior 
+{
+    TextField _userNameTextField;
+    AwaitableCompletionSource&lt;string&gt; _completionSource = new AwaitableCompletionSource&lt;string&gt;();
+    public void Start()
+    {
+        var rootVisual = GetComponent&lt;UIDocument&gt;().rootVisualElement;
+        var userNameField = rootVisual.Q&lt;TextField&gt;(&quot;userNameField&quot;);
+        rootVisual.Q&lt;Button&gt;(&quot;OkButton&quot;).clicked += ()=&gt;{
+            _completionSource.SetResult(userNameField.text);
+        }
+    }
+
+    public static Awaitable&lt;string&gt; WaitForUsernameAsync() =&gt; _completionSource.Awaitable;
+}
+
+...
+
+public class HighScoreRanks : MonoBehavior 
+{
+    ...
+    public async Awaitable ReportCurrentUserScoreAsync(int score)
+    {
+        _userNameOverlayGameObject.SetActive(true);
+        var prompt = _userNameOverlayGameObject.GetComponent&lt;UserNamePrompt&gt;();
+        var userName = await prompt.WaitForUsernameAsync();
+        _userNameOverlayGameObject.SetActive(false);
+        await SomeAPICall(userName, score);
+    }
+}
+
+</code></pre>
+
+<h2>Performance considerations</h2>
+
+<h3>Awaitable vs Iterator-based coroutines</h3>
+
+<p>In most cases, Awaitable should be slightly more efficient than iterator-based coroutines, especially for cases where the iterator would return non-null values (such as WaitForFixedUpdate etc).</p>
+
+<h3>Scalability</h3>
+
+<p>Although Unity’s Awaitable class is optimized for performance, you should avoid running hundreds of thousands of concurrent coroutines. Similar to coroutine-based iterators, a behavior with a loop similar to the following example attached to all your game objects is very likely to cause performance problems:</p>
+
+<pre><code class="lang-csharp">while(true){
+    // do something
+    await Awaitable.NextFrameAsync();
+}
+</code></pre>
+
+<h3>MainThreadAsync / BackgroundThreadAsync</h3>
+
+<p>From a performance perspective, it is very efficient to call <code>await Awaitable.MainThreadAsync()</code> from the main thread, or to call <code>await Awaitable.BackgroundThreadAsync()</code> from a background thread. However, the synchronization mechanism switching to the main thread from a background thread causes your code to resume on the next Update event. Therefore you should avoid from switching back and forth between the main thread and background threads at a high frequency, because your code will have to wait for the next frame on each call to MainThreadAsync().</p>
+
+<h3>Await support compared to the C# Job System</h3>
+
+<p>Unity’s Await support is better suited to the following scenarios than the C# Job system:</p>
+
+<ul>
+<li>Simplifying code when dealing with inherently asynchronous operations such as manipulating files or performing web requests, in an non-blocking way.</li>
+<li>Offloading long running tasks (&gt;1 frame) to a background thread.</li>
+<li>Modernizing Iterator-based coroutines.</li>
+<li>Mixing and matching multiple kinds of async operations (frame events, unity events, third party asynchronous APIs, I/O).</li>
+</ul>
+
+<p>However it is <strong>not</strong> recommended for shorter-lived operations such as when parallelizing computationally-intensive algorithms. To get the most of multi-core CPUs and parallelize your algorithms, you should instead use the <a href="JobSystem.html">C# Job System</a>.</p>
+
+<h2>Testing</h2>
+
+<p>Unity’s Test Framework does not recognize Awaitable as a valid test return type. However, the following example shows how you can use Awaitable’s implementation of IEnumerator to write async tests:</p>
+
+<pre><code class="lang-csharp">[UnityTest]
+public IEnumerator SomeAsyncTest(){
+    async Awaitable TestImplementation(){
+        // test something with async / await support here
+    };
+    return TestImplementation();
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<h3>Frame Coroutines</h3>
+
+<pre><code class="lang-csharp">async Awaitable SampleSchedulingJobsForNextFrame()
+{
+    // wait until end of frame to avoid competing over resources with other unity subsystems
+    await Awaitable.EndOfFrameAsync(); 
+    var jobHandle = ScheduleSomethingWithJobSystem();
+    // let the job execute while next frame starts
+    await Awaitable.NextFrameAsync();
+    jobHandle.Complete();
+    // use results of computation
+}
+
+JobHandle ScheduleSomethingWithJobSystem()
+{
+    ...
+}
+</code></pre>
+
+<h3>Switching to a background thread and back</h3>
+
+<pre><code class="lang-csharp">private async Awaitable&lt;float&gt; DoSomeHeavyComputationInBackgroundAsync(bool continueOnMainThread = true)
+{
+    await Awaitable.BackgroundThreadAsync();
+    // do some heavy math here
+    float result = 42;
+
+    // by default, switch back to main thread:
+    if(continueOnMainThread){
+        await Awaitable.MainThreadAsync();
+    }
+    return result;
+}
+</code></pre>
+
+<h3>Loading resources asynchronously</h3>
+
+<pre><code class="lang-csharp">public async Awaitable Start()
+{
+    var operation = Resources.LoadAsync(&quot;my-texture&quot;);
+    await operation;
+    var texture = operation.asset as Texture2D;
+}
+</code></pre>
+
+<h3>Composition</h3>
+
+<p>One of the biggest advantage of leveraging await, is that we can mix an match any await-compatible type in the same method:</p>
+
+<pre><code class="lang-csharp">public async Awaitable Start()
+{
+    await CallSomeThirdPartyAPIReturningDotnetTask();
+    await Awaitable.NextFrameAsync();
+    await SceneManager.LoadSceneAsync(&quot;my-scene&quot;);
+    await SomeUserCodeReturningAwaitable();
+    ...
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NullReferenceException.html"></a></span><div class="tip">Null Reference Exceptions</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingImportantClasses.html"></a></span><div class="tip">Important Classes </div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

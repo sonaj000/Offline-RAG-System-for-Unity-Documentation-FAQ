@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Install Unity offline without the Hub</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/DeployingUnityOffline.html">English</a></li>
+<li><a href="/cn/current/Manual/DeployingUnityOffline.html">中文</a></li>
+<li><a href="/ja/current/Manual/DeployingUnityOffline.html">日本語</a></li>
+<li><a href="/kr/current/Manual/DeployingUnityOffline.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/DeployingUnityOffline.html">English</a></li>
+<li><a href="/cn/current/Manual/DeployingUnityOffline.html">中文</a></li>
+<li><a href="/ja/current/Manual/DeployingUnityOffline.html">日本語</a></li>
+<li><a href="/kr/current/Manual/DeployingUnityOffline.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="GettingStartedInstallingUnity.html">Install Unity</a></li>
+<li>Install Unity offline without the Hub</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="InstallingUnity.html"></a></span><div class="tip">Install Unity from the command line</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ent-deployment.html"></a></span><div class="tip">Deploy Unity across your enterprise</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Install Unity offline without the Hub</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Unity Download Assistant supports offline deployment. Use the Download Assistant to download files to install Unity and to generate a script to repeat the installation on other computers without internet access.</p>
+
+<p>For more information about how to activate Unity manually, refer to the <a href="ManualActivationGuide.html">Unity Manual Activation Guide</a>.</p>
+
+<h2>Prerequisites</h2>
+
+<p>To complete these steps, you need:</p>
+
+<ul>
+<li>A computer with internet access</li>
+<li>A computer without internet access</li>
+</ul>
+
+<h2>Download files with an internet connected machine</h2>
+
+<ol>
+<li>
+<p>On the computer with internet access, go to the following website:</p>
+
+<p>https://unity3d.com/get-unity/download/archive</p>
+</li>
+<li><p>Select the downloads tab for the operating system of the offline computer and version of Unity you need.</p></li>
+<li><p>Select <strong>Unity Installer</strong>.</p></li>
+<li><p>Proceed through installation, and select any build support options you want.</p></li>
+<li><p>Download the files to defined location, such as the Downloads folder, instead of to a temporary location.</p></li>
+</ol>
+
+<p>To confirm the download succeeded, do the following:</p>
+
+<ol>
+<li>Open the file manager.</li>
+<li>Navigate to the location folder you specified earlier.</li>
+<li>Confirm the <code>.sh</code> or <code>.bat</code> file is inside that folder.</li>
+<li>Check the contents of this file to make sure they resemble the following example:</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/deploying-unity-offline-install-bat.png" alt="">
+</figure>
+
+<h2>Install Unity on the offline computer</h2>
+
+<ol>
+<li>
+<p>Copy all the downloaded files to the offline computer. If the offline computer has a Windows operating system:</p>
+
+<ol>
+<li>Run the supplied <code>.bat</code> file from the Administrator shell:
+
+<ol>
+<li>In the <strong>Start</strong> menu, search for <code>cmd.exe</code>.</li>
+<li>Right-click.</li>
+<li>Select <strong>Run as administrator</strong>.</li>
+</ol>
+</li>
+<li>Navigate to the folder with the <span class="tooltip"><strong>scripts</strong><span class="tooltiptext">A piece of code that allows you to create your own Components, trigger game events, modify Component properties over time and respond to user input in any way you like. <a class="tooltipMoreInfoLink" href="CreatingAndUsingScripts.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scripts">Glossary</a></span></span></span>. This is usually in the Downloads folder (<code>cd C:\Users\[YourName]\Download\UnityPackages</code>).</li>
+</ol>
+
+<p>If this offline computer has an OSX operating system:</p>
+
+<ol>
+<li>Copy all the downloaded files to the offline computer.</li>
+<li>Run the supplied <code>.sh</code> file.</li>
+<li>Run <code>sudo install.sh</code>.</li>
+<li>Navigate to the folder with the scripts. This is usually in the Downloads folder (<code>cd ~/Downloads/UnityPackages</code>).</li>
+</ol>
+</li>
+<li><p>Repeat these instructions as many times as you need to for each computer on which you need to install Unity.</p></li>
+<li><p>After Unity is installed, open Unity through the desktop shortcut.</p></li>
+</ol>
+
+<h2>Activate a license on the offline computer</h2>
+
+<p>Follow <a href="ManualActivationGuide.html">the manual activation instructions</a> to activate your license on an offline computer.</p>
+
+<h2>Install Unity Hub offline</h2>
+
+<ol>
+<li><p>As a part of the downloaded files from the Unity Download Assistant is a file “UnityHubSetup.exe”. Run this file on the offline machine to install Unity Hub. Unity Hub assists in managing your Unity Projects and Editor Installations.</p></li>
+<li>
+<p>To locate the existing Unity installation, navigate to the “Unity.exe” installed previously. For example:</p>
+
+<p>C:\Program Files\Unity XXXXXX\Editor\Unity.exe (Default Unity install path without the Hub)</p>
+
+<p>or</p>
+
+<p>C:\Program Files\Unity\Hub\Editor\20XXXX\Editor\Unity.exe (Default Unity install path with the Hub)</p>
+</li>
+<li><p>To deactivate the Welcome screen:</p></li>
+</ol>
+
+<p>If you’ve never set up a services-config.json file before, you need to create both the config directory and the services-config.json file:</p>
+
+<ul>
+<li>MacOS: /Library/Application Support/Unity/config</li>
+<li>Windows: C:\ProgramData\Unity\config</li>
+<li>Linux: /usr/share/unity3d/config</li>
+</ul>
+
+<p>Inside this file, add the following option:</p>
+
+<pre><code>{
+  &quot;hubDisableWelcomeScreen&quot;: true
+}
+</code></pre>
+<!-- area:none -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="InstallingUnity.html"></a></span><div class="tip">Install Unity from the command line</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ent-deployment.html"></a></span><div class="tip">Deploy Unity across your enterprise</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

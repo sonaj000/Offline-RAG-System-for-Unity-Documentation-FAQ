@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Android Templates Upgrader window reference</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/android-templates-upgrader-window.html">English</a></li>
+<li><a href="/cn/current/Manual/android-templates-upgrader-window.html">中文</a></li>
+<li><a href="/ja/current/Manual/android-templates-upgrader-window.html">日本語</a></li>
+<li><a href="/kr/current/Manual/android-templates-upgrader-window.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/android-templates-upgrader-window.html">English</a></li>
+<li><a href="/cn/current/Manual/android-templates-upgrader-window.html">中文</a></li>
+<li><a href="/ja/current/Manual/android-templates-upgrader-window.html">日本語</a></li>
+<li><a href="/kr/current/Manual/android-templates-upgrader-window.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PlatformSpecific.html">Platform development  </a></li>
+<li><a href="android.html">Android</a></li>
+<li><a href="android-building-and-delivering.html">Building and delivering for Android</a></li>
+<li><a href="android-modify-gradle-project-files.html">Modify Gradle project files</a></li>
+<li>Android Templates Upgrader window reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="android-modify-gradle-project-files-android-studio.html"></a></span><div class="tip">Modify Gradle project files with Android Studio</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-build-settings.html"></a></span><div class="tip">Android Build Settings</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Android Templates Upgrader window reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Android Templates Upgrader window is a tool that upgrades <a class="tooltipMoreInfoLink" href="android-modify-gradle-project-files-methods.html#templates">Gradle template files</a> to use the <a href="android-modify-gradle-project-files-methods.html#agp">Android Project Configuration Manager</a>. To do this, it takes the <span class="tooltip"><strong>Gradle</strong><span class="tooltiptext">An Android build system that automates several build processes. This automation means that many common build errors are less likely to occur. <a href="android-gradle-overview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Gradle">Glossary</a></span></span></span> template files in your project and creates a new C# script that uses the Android Project Configuration Manager API to make the same Gradle project file modifications as the Gradle template files. It then disables the Gradle template files.</p>
+
+<p>To open the Android Templates Upgrader window:</p>
+
+<ol>
+<li>Open <a href="class-PlayerSettingsAndroid.html">Android Player Settings</a>.</li>
+<li>Go to <strong>Publishing Settings</strong> &gt; <strong>Build</strong>.</li>
+<li>Select <strong>Upgrade templates to C#</strong>.</li>
+</ol>
+
+<p>
+<strong>Tip</strong>: It’s best practice to use this window as a one-time upgrade path. After you upgrade your Gradle template files, you should use the new C# script and the Android Project Configuration Manager API to make any further Gradle project file modifications.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Custom Main Manifest</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Main Manifest template file.<br>This property is visible only when you enable <strong>Custom Main Manifest</strong> in <span class="tooltip"><a class="tooltipMoreInfoLink" href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a><span class="tooltiptext">Settings that let you set various player-specific options for the final game built by Unity. <a href="class-PlayerSettings.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#PlayerSettings">Glossary</a></span></span></span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Launcher Manifest</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Launcher Manifest template file.<br>This property is visible only when you enable <strong>Custom Launcher Manifest</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Main Gradle Template</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Main Gradle template file.<br>This property is visible only when you enable <strong>Custom Main Gradle Template</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Launcher Gradle Template</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Launcher Gradle template file.<br>This property is visible only when you enable <strong>Custom Launcher Gradle Template</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Base Gradle Template</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Base Gradle template file.<br>This property is visible only when you enable <strong>Custom Base Gradle Template</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Gradle Properties Template</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Gradle Properties template file.<br>This property is visible only when you enable <strong>Custom Gradle Properties Template</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Gradle Settings Template</strong></td>
+	<td style="text-align:left;">Indicates whether to upgrade your Gradle Settings template file.<br>This property is visible only when you enable <strong>Custom Gradle Settings Template</strong> in <a href="class-PlayerSettingsAndroid.html#Publishing">Player Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Upgrade Templates</strong></td>
+	<td style="text-align:left;">Upgrades the selected Gradle template files to use the Android Project Configuration Manager API. The upgrade process creates a new C# script that makes the same Gradle project file modifications as the selected Gradle template files. If the upgrade process succeeds, the window displays the path to the new C# script. If the upgrade process fails, the window displays an error.<br>This button is interactive when you select at least one custom Gradle template file to upgrade.</td>
+</tr>
+</tbody>
+</table>
+
+<p>When the upgrader disables custom Gradle template files, it doesn’t delete them. This means that if you later want to use the Gradle template files again, you can delete the generated C# script and re-enable the relevant custom Gradle template options in Android Player Settings. This re-enables your Gradle template files which still perform the same modifications as they did before you ran the upgrader.</p>
+
+<p>If you run the upgrader multiple times it creates a backup of the previously generated C# script. The backup is in the same directory and has the same name as the newly generated C# script. To differentiate the backup from the newly generated C# script, the file extension for the backup is <code>.cs.BACKUP</code>.</p>
+
+<p>
+<strong>Warning</strong>: Successive runs of the upgrader override the backup. This means if you make any changes in the backup file then run the upgrader, these changes will be lost.</p>
+
+<p>
+<strong>Warning</strong>: If you use single quotes to define values for string properties in the gradle templates, these properties will use double quotes when exported to the Gradle project.</p>
+
+<p>
+<strong>Warning</strong>: Unity supports two <a href="android-application-entries.html">application entry points</a>: <a href="android-application-entries-activity.html">Activity</a> and <a href="android-application-entries-game-activity.html">GameActivity</a>. If the file you want to upgrade contains modifications specifically for one entry point, but you don’t <a href="android-application-entries-set.html">enable that entry point</a>, the generated C# script won’t affect the disabled activity. The result is that the final <code>AndroidManifest.xml</code> won’t include the modifications.</p>
+
+<p>For example, if your template contains modifications specifically for the Activity application entry point, the template upgrader generates a script that also specifically modifies Activity. If you later switch to the GameActivity application entry point, the modifications have no effect.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="android-modify-gradle-project-files-methods.html#templates">Gradle template files</a></li>
+<li><a href="android-modify-gradle-project-files-methods.html#agp">Android Project Configuration Manager</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="android-modify-gradle-project-files-android-studio.html"></a></span><div class="tip">Modify Gradle project files with Android Studio</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-build-settings.html"></a></span><div class="tip">Android Build Settings</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

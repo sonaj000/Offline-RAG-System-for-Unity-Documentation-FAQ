@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: AssetBundle Download Integrity and Security</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetBundles-Integrity.html">English</a></li>
+<li><a href="/cn/current/Manual/AssetBundles-Integrity.html">中文</a></li>
+<li><a href="/ja/current/Manual/AssetBundles-Integrity.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AssetBundles-Integrity.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetBundles-Integrity.html">English</a></li>
+<li><a href="/cn/current/Manual/AssetBundles-Integrity.html">中文</a></li>
+<li><a href="/ja/current/Manual/AssetBundles-Integrity.html">日本語</a></li>
+<li><a href="/kr/current/Manual/AssetBundles-Integrity.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="AssetWorkflow.html">Asset workflow</a></li>
+<li><a href="AssetBundlesIntro.html">AssetBundles</a></li>
+<li>AssetBundle Download Integrity and Security</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundles-Troubleshooting.html"></a></span><div class="tip">Troubleshooting</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Build-MultiProcess.html"></a></span><div class="tip">Multi-Process AssetBundle Building (Experimental)</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>AssetBundle Download Integrity and Security</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can choose to either distribute your AssetBundles with your game or app, or they can be downloaded from remote servers by your game or app. In the latter case, when you download AssetBundles, it’s important to take precautions to prevent AssetBundle data corruption as well as attacks by malicious actors. A common cause of mysterious crashes on user devices comes from data corruption in downloaded AssetBundles. Such situations can cost a large amount of effort and time to diagnose and resolve. And, even though AssetBundles cannot contain executable code, changing serialized data could allow an attacker to exploit a vulnerability in the game code or the Unity runtime.</p>
+
+<h2>Download With a Secure Protocol</h2>
+
+<p>
+<a href="../ScriptReference/Networking.UnityWebRequestAssetBundle.html">UnityWebRequestAssetBundle</a> can be used to download and cache AssetBundles from the internet. When using this API you should use the HTTPS protocol in your URL, unless your URL refers to a local web server that runs on the same machine. The HTTP protocol is not secure and is vulnerable to a malicious man in the middle attack.</p>
+
+<h2>CRC Checksums</h2>
+
+<p>Unity provides the tools for you to use a checksum to determine that an AssetBundle is not corrupted or modified when downloading it. A 32-bit checksum is generated during the AssetBundle build process and recorded in the .manifest file and exposed by <a href="../ScriptReference/BuildPipeline.GetCRCForAssetBundle.html">BuildPipeline.GetCRCForAssetBundle</a>. When you use a CRC check, it ensures the AssetBundle data was not corrupted or tampered with after it was built. You must provide this CRC when downloading AssetBundles through <code>UnityWebRequestAssetBundle.GetAssetBundle</code> so that invalid AssetBundles content cannot make it into the cache. See <a href="AssetBundles-Cache.html">AssetBundle compression and caching</a> for additional details.</p>
+
+<p>If you download or distribute AssetBundles yourself, and do not use the built-in AssetBundle Cache, then you should be sure to perform integrity checks prior to using any content that you have retrieved. One way to do that is to use the optional parameters on the AssetBundle Load APIs to pass in the expected CRC value. When provided, the loading system calculates the checksum of the uncompressed content of the AssetBundle before loading it. If the CRC of the AssetBundle does not match the provided CRC, the AssetBundle will not load. For AssetBundles compressed with LZ4 this can be costly because it forces the file to be fully decompressed into RAM. For LZMA compressed AssetBundles the load already forces a full content decompression, so performing the CRC check is not a significant additional cost. Overall it can be practical to avoid the cost of CRC calculations by performing the integrity check once, as the file is retrieved and stored on the device, rather than repeating it at each load.</p>
+
+<p>Note: If you are using AssetBundle <span class="tooltip"><strong>compression</strong><span class="tooltiptext">A method of storing data that reduces the amount of storage space it requires. See <a href="class-TextureImporterOverride.html">Texture Compression</a>, <a href="class-AnimationClip.html#AssetProperties">Animation Compression</a>, <a href="class-AudioClip.html">Audio Compression</a>, <a href="ReducingFilesize.html">Build Compression</a>.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#compression">Glossary</a></span></span></span> then you shouldn’t use other common hash algorithms (such as md5) to validate your AssetBundle files. This is because Unity sometimes recompresses your AssetBundles even if their contents didn’t change, which means the file content hash may change in cases when the contents of the file are actually still valid. In contrast, the CRC value for an AssetBundle is calculated from its uncompressed content, which remains constant even when the bundle is recompressed.</p>
+
+<p>Note: the AssetBundle hash that a Unity build calculates and stores inside the .manifest is not a hash of the AssetBundle’s full file content. It can be used as a version value for the AssetBundle but is not suitable to use for file corruption detection.</p>
+
+<h2>User Generated Content</h2>
+
+<p>If you allow users to upload content that is distributed to other players (User Generated Content), it is your responsibility to filter this data for inappropriate or malicious content. We do not recommend that you let users build and upload binary AssetBundle files. It is preferable to have your users upload their source assets and let you, the developer, build the AssetBundle binary file for them. This will make it easier for you to filter out malicious or inappropriate content through manual and automated processes. It also enables you to rebuild the AssetBundles as needed if you upgrade to a later Unity version.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundles-Troubleshooting.html"></a></span><div class="tip">Troubleshooting</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Build-MultiProcess.html"></a></span><div class="tip">Multi-Process AssetBundle Building (Experimental)</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

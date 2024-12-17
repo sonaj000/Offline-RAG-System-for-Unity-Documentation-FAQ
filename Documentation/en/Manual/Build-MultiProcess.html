@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Multi-Process AssetBundle Building (Experimental)</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Build-MultiProcess.html">English</a></li>
+<li><a href="/cn/current/Manual/Build-MultiProcess.html">中文</a></li>
+<li><a href="/ja/current/Manual/Build-MultiProcess.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Build-MultiProcess.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Build-MultiProcess.html">English</a></li>
+<li><a href="/cn/current/Manual/Build-MultiProcess.html">中文</a></li>
+<li><a href="/ja/current/Manual/Build-MultiProcess.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Build-MultiProcess.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="AssetWorkflow.html">Asset workflow</a></li>
+<li><a href="AssetBundlesIntro.html">AssetBundles</a></li>
+<li>Multi-Process AssetBundle Building (Experimental)</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundles-Integrity.html"></a></span><div class="tip">AssetBundle Download Integrity and Security</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingAssets.html"></a></span><div class="tip">Scripting with Assets</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Multi-Process AssetBundle Building (Experimental)</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Multi-Process AssetBundle Building is a significant improvement to the way AssetBundles are built compared with previous versions of Unity. This feature (introduced in 2023.1) is initially offered side-by-side with the existing build code, and is disabled by default. The new functionality only applies to AssetBundles that are built with BuildPipeline.BuildAssetBundles(), not to those built with Addressables.</p>
+
+<p>This feature provides improved build performance and addresses some long-standing issues with AssetBundles. To facilitate adoption it offers a high degree of compatibility in its output and is available through the existing API.</p>
+
+<p>The new mechanism makes use of the Asset Database to perform multiple parallel imports, as well as caching intermediate files. In many cases a clean build will be faster when this feature is enabled, and incremental builds can be much faster and more accurate. In addition, you can use the <a href="Accelerator">Accelerator</a> to share build artifacts between machines, making it possible for builds from one machine to speed up similar builds on other machines. For more information see also <a href="ParallelImport.html">Parallel Import</a>.</p>
+
+<p>When Multi-Process building is enabled it also moves the <span class="tooltip"><strong>shader</strong><span class="tooltiptext">A program that runs on the GPU. <a class="tooltipMoreInfoLink" href="Shaders.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Shader">Glossary</a></span></span></span> compilation work to its own dedicated build step, which can make it clearer how much time is spent compiling shaders, compared to other steps of a build.</p>
+
+<h2>Enabling Multi-Process AssetBundle building</h2>
+
+<p>To enable the new feature in the user interface</p>
+
+<ol>
+<li>Open the <a href="class-EditorManager.html">Editor</a> settings (top menu: <strong>Edit &gt; Project Settings</strong>, then select the <strong>Editor</strong> category).</li>
+<li>Click the check box for <strong>Multi-Process AssetBundle Building</strong>.</li>
+</ol>
+
+<p>The setting is exposed to scripting using <a href="../ScriptReference/EditorBuildSettings.UseParallelAssetBundleBuilding.html">EditorBuildSettings.UseParallelAssetBundleBuilding</a>.</p>
+
+<h2>Differences and Known Limitations</h2>
+
+<ul>
+<li><span class="tooltip"><strong>Mesh</strong><span class="tooltiptext">The main graphics primitive of Unity. Meshes make up a large part of your 3D worlds. Unity supports triangulated or Quadrangulated polygon meshes. Nurbs, Nurms, Subdiv surfaces must be converted to polygons. <a class="tooltipMoreInfoLink" href="comp-MeshGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Mesh">Glossary</a></span></span></span> Optimization is not enabled when using Multi-Process AssetBundle Building. It is silently forced to “off” during the build. Note: In practice Mesh Optimization adds a high cost and complexity to the building process, and often does not give very much gain at runtime.</li>
+<li><span class="tooltip"><strong>Sprite</strong><span class="tooltiptext">A 2D graphic objects. If you are used to working in 3D, Sprites are essentially just standard textures but there are special techniques for combining and managing sprite textures for efficiency and convenience during development. <a class="tooltipMoreInfoLink" href="Sprites.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Sprite">Glossary</a></span></span></span> Atlas V1 is not supported. An error is printed when this older format is detected. You should update V1 assets to <a href="SpriteAtlasV2.html">SpriteAtlasV2</a> in order to build successfully.</li>
+<li>The way that objects influence each other is now calculated across all AssetBundles rather than within the scope of each individual AssetBundle. For example, if a material needs a certain shader feature to be enabled, then that shader feature will be enabled, even if the shader is part of a different AssetBundle. This gives results closer to what is typically expected, but can result in some longer shader compilation times, especially if a shader is repeated in multiple AssetBundles. See also <a href="shader-keywords.html">Shader keywords</a>.</li>
+<li>Given identical input, the output from a multi-process build will not be binary-identical to a non-multi-process build. However, the output should be functionally identical. This means that if you have already shipped AssetBundles to users, then updating your project to use Multi-Process building may result in changes to all your AssetBundle files. When you push your next release this can trigger downloads for your live users. The binary differences come from improvements and bug fixes that can result in slightly different object naming or ordering inside the AssetBundle.</li>
+<li>The disk space used by your Project’s Library folder can grow larger because we use the AssetDatabase to cache intermediate build artifacts. These artifacts are fully flushed at the beginning of a build when the <a href="../ScriptReference/BuildAssetBundleOptions.ForceRebuildAssetBundle.html">BuildAssetBundleOptions.ForceRebuildAssetBundle</a> flag is specified.</li>
+<li>When Multi-Process is enabled, the AssetBundle hash is a hash value of the uncompressed contents of the AssetBundle. This serves as a file version identifier that is independent of the <span class="tooltip"><strong>compression</strong><span class="tooltiptext">A method of storing data that reduces the amount of storage space it requires. See <a href="class-TextureImporterOverride.html">Texture Compression</a>, <a href="class-AnimationClip.html#AssetProperties">Animation Compression</a>, <a href="class-AudioClip.html">Audio Compression</a>, <a href="ReducingFilesize.html">Build Compression</a>.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#compression">Glossary</a></span></span></span> and that doesn’t incorporate the content of the AssetBundle header. <strong>Tip:</strong> the <a href="../ScriptReference/BuildAssetBundleOptions.AssetBundleStripUnityVersion.html">BuildAssetBundleOptions.AssetBundleStripUnityVersion</a> flag can be useful to exclude the Unity version from the AssetBundle content, and hence from the hash.</li>
+<li>With this new way of calculating hashes, the hash can only be determined by running the full build. Therefore <a href="../ScriptReference/AssetBundleManifest.GetAssetBundleHash.html">AssetBundleManifest.GetAssetBundleHash</a> returns 0 when BuildPipeline.BuildAssetBundles is called with <a href="../ScriptReference/BuildAssetBundleOptions.DryRunBuild.html">BuildAssetBundleOptions.DryRunBuild</a>.</li>
+</ul>
+
+<h2>Build Callbacks</h2>
+
+<p>If you are adapting an existing project which uses Build Callbacks to work with the Multi-Process AssetBundle Building, you may need to make code changes to your Build Callback code.</p>
+
+<p>During a build, <span class="tooltip"><strong>scene</strong><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene">Glossary</a></span></span></span> files are loaded and resaved into the output format. Script code may be executed during this time, for example via the <a href="../ScriptReference/Build.IProcessSceneWithReport.OnProcessScene.html">IProcessSceneWithReport.OnProcessScene</a> build callback. When Multi-Process AssetBundle Building is used this script code will execute in the context of an Import job inside a AssetDatabase worker process, similar to how a ScriptedImporter can run.</p>
+
+<p>For scene callbacks that work entirely with the state of the scene that is loaded there will be no problem running as part of an AssetDatabase importer. But certain situations may cause trouble:</p>
+
+<ul>
+<li><p>Changing Assets. You should never create, delete or modify external assets from within a build callback. There are now specific protections which prevent calls to AssetDatabase APIs that change assets. A scripting exception is thrown with a clear error message if those calls are made.</p></li>
+<li><p>Dependency tracking. In some contexts it is necessary for a build callback to read the contents of other assets outside of the scene. If the scene also references that asset explicitly, this works properly without any additional change. If not, you need to update your build callback implementation to use the new <a href="../ScriptReference/Build.BuildPipelineContext.DependOnAsset.html">BuildPipelineContext.DependOnAsset</a> call so that the dependency is tracked. Otherwise future incremental builds might re-use cached artifacts that are out of date, and the callback script will not be invoked.</p></li>
+<li><p>Singletons and Global State. The multi-process nature of the new build system means that scenes and other assets are loaded in different worker processes, rather than all being loaded in sequence inside the main Unity Process. This means code that uses shared access to global data, such as a Singleton, may stop working. It might be necessary to rework any code that depends on shared memory to use data stored directly in the scene, or inside an asset or possibly a temporary file.</p></li>
+</ul>
+
+<h3>Callback versioning</h3>
+
+<p>Because of caching, an incremental build only invokes a build callback if the scene or another dependency has changed since the last build. If the script callback has changed and must be run again, you can force this to occur by incrementing the <a href="../ScriptReference/Build.BuildCallbackVersionAttribute.html">BuildCallbackVersion</a> attribute on the callback. For callbacks that do not specify that attribute the default version number is 1.</p>
+
+<p>Note: there are other circumstances in which scripting code may be invoked during a build, for example the <a href="../ScriptReference/MonoBehaviour.Awake.html">Awake</a> method on MonoBehaviour-derived classes with the <a href="../ScriptReference/ExecuteInEditMode.html">ExecuteInEditMode</a> attribute. If you have code is performing actions that aren’t permitted during an AssetDatabase import then you might need to change that code. <strong>Tip:</strong> the <a href="../ScriptReference/BuildPipeline.isBuildingPlayer.html">BuildPipeline.isBuildingPlayer</a> API returns true during AssetBundle builds, so you can use it to add conditional logic, for example to avoid executing problematic code during a build but to still permit it when entering Playmode.</p>
+
+<h2>Diagnostics flags for Advanced Troubleshooting</h2>
+
+<p>In addition to the general techniques and tools mentioned in the <a href="AssetBundles-Troubleshooting.html">AssetBundle Trouble</a> topic, these are a few <a href="Preferences.html">Diagnostic flags</a> available in the Preference Window which can aid in collecting detailed information about an AssetBundle build. These flags are intended for advanced use and in the future they may change, or be removed.</p>
+
+<h3>Backward Compatibility Mode</h3>
+
+<p>The <code>BuildPipelineBinaryBackwardCompatibilityMode</code> diagnostic flag is specific to Multi-Process AssetBundle builds. When enabled, certain behaviors are changed to more closely match the behavior of the existing AssetBundle build logic. In some cases enabling this flag will result in AssetBundles that have precisely matching binary content to a build performed with the Multi-Process project setting turned off. This flag is off by default because most of the differences in the AssetBundle content are the result of intentional improvements, and the compatibility mode might be removed in the future. However this flag might be useful in existing projects, where it can be important to have minimal churn in AssetBundle content.</p>
+
+<h3>Build Profiling</h3>
+
+<p>When the <code>BuildPipelineTEPCapture</code> Diagnostic flag is enabled then calls to <code>BuildPipeline.BuildAssetBundles</code> will generate a “trace event” format <span class="tooltip"><strong>profiler</strong><span class="tooltiptext">A window that helps you to optimize your game. It shows how much time is spent in the various areas of your game. For example, it can report the percentage of time spent rendering, animating, or in your game logic. <a class="tooltipMoreInfoLink" href="Profiler.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Profiler">Glossary</a></span></span></span> file. You can use this file to get a detailed view of what steps the build performed, including steps performed in each AssetDatabase worker process.</p>
+
+<p>This file is overwritten for each build and can be found at the path <code>Logs/BuildAssetBundlesTEP.json</code>. This is the file format supported by Chrome Tracing, see <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit?usp=sharing">Trace Event Format</a> for details. One way to view the content is to open it with the chrome://tracing tool in Google Chrome or another Chromium-based browser.</p>
+
+<h3>Build Debug Files</h3>
+
+<p>The <code>BuildPipelineWriteDebugFiles</code> flag is specific to Multi-Process AssetBundle builds. When enabled, the build writes extra JSON format files into the <code>Temp/BuildInstructions</code> folder. These files are only useful for testing and debugging purposes, they are not required or consumed by the build itself. When sending bug reports to Unity, it might be useful to provide these files, especially if it is not possible to submit the full project.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetBundles-Integrity.html"></a></span><div class="tip">AssetBundle Download Integrity and Security</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingAssets.html"></a></span><div class="tip">Scripting with Assets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

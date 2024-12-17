@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Customize UXML tag names and attributes</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20240425"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20240425"></script><script type="text/javascript" src="docdata/toc.js?ts=20240425"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20240425"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20240425">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2023.2</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UIE-custom-tag-name-and-attributes.html">English</a></li>
+<li><a href="/cn/current/Manual/UIE-custom-tag-name-and-attributes.html">中文</a></li>
+<li><a href="/ja/current/Manual/UIE-custom-tag-name-and-attributes.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UIE-custom-tag-name-and-attributes.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2023.2</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UIE-custom-tag-name-and-attributes.html">English</a></li>
+<li><a href="/cn/current/Manual/UIE-custom-tag-name-and-attributes.html">中文</a></li>
+<li><a href="/ja/current/Manual/UIE-custom-tag-name-and-attributes.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UIE-custom-tag-name-and-attributes.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UIToolkits.html">User interface (UI)</a></li>
+<li><a href="UIElements.html">UI Toolkit</a></li>
+<li><a href="UIE-structure-ui.html">Structure UI</a></li>
+<li><a href="UIE-custom-controls.html">Custom controls</a></li>
+<li>Customize UXML tag names and attributes</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-custom-controls.html"></a></span><div class="tip">Create a custom control</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-bind-custom-control-to-data.html"></a></span><div class="tip">Bind custom controls to data</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Customize UXML tag names and attributes</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can customize a UXML tag name, create custom attributes for a custom control, and add attribute decorators in <span class="tooltip"><strong>UI</strong><span class="tooltiptext">(User Interface) Allows a user to interact with your application. Unity currently supports three UI systems. <a class="tooltipMoreInfoLink" href="UI-system-compare.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#UI">Glossary</a></span></span></span> Builder.</p>
+
+<h2>Customize the custom control name</h2>
+
+<p>By default, the tag name in UXML for your custom control is the C# class name. It’s not recommended that a tag has a different name than the C# class. However, you have the option to customize the tag name.</p>
+
+<p>To customize a UXML tag name, add a <a href="../ScriptReference/UIElements.UxmlElementAttribute-name.html"><code>name</code></a> argument to the <a href="../ScriptReference/UIElements.UxmlElementAttribute.html"><code>UxmlElement</code></a> attribute.</p>
+
+<p>
+<strong>Note</strong>: The tag name must be unique and you must reference the classes’ namespace in UXML. </p>
+
+<p>For example, if you create the following custom button:</p>
+
+<pre><code class="lang-cs">using UnityEngine.UIElements;
+
+[UxmlElement(&quot;MyButton&quot;)]
+public partial class CustomButtonElement : Button
+{
+}
+</code></pre>
+
+<p>You can then reference the custom button in UXML with the custom name or its type:</p>
+
+<pre><code class="lang-cs">&lt;ui:UXML xmlns:ui=&quot;UnityEngine.UIElements&quot;&gt;
+    &lt;MyButton /&gt;
+    &lt;CustomButtonElement /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h2>Create custom attributes for a custom control</h2>
+
+<p>To create new attributes for a custom control, add the <a href="../ScriptReference/UIElements.UxmlAttributeAttribute.html"><code>UxmlAttribute</code></a> attribute to the custom attribute definition. By default, UI Toolkit resolves the C# Camel case or Pascal case attribute names into lowercase words connected by hyphens. For example, a property named <code>MyFloat</code> or <code>myFloat</code> in C# becomes <code>my-float</code> in UXML and UI Builder. </p>
+
+<h3>Create simple custom attributes</h3>
+
+<p>The following example creates a custom control with multiple custom attributes:</p>
+
+<pre><code class="lang-cs">using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+[UxmlElement]
+public partial class ExampleVisualElement : VisualElement
+{
+    [UxmlAttribute]
+    public string myStringValue { get; set; }
+
+    [UxmlAttribute]
+    public int myIntValue { get; set; }
+
+    [UxmlAttribute]
+    public float myFloatValue { get; set; }
+
+    [UxmlAttribute]
+    public List&lt;int&gt; myListOfInts { get; set; }
+
+    [UxmlAttribute, UxmlTypeReference(typeof(VisualElement))]
+    public Type myType { get; set; }
+
+    [UxmlAttribute]
+    public Texture2D myTexture { get; set; }
+
+    [UxmlAttribute]
+    public Color myColor { get; set; }
+}
+
+</code></pre>
+
+<p>The following example UXML document uses the custom control:</p>
+
+<pre><code class="lang-cs">&lt;ui:UXML xmlns:ui=&quot;UnityEngine.UIElements&quot;&gt;
+    &lt;ExampleElement my-string-value=&quot;Hello World&quot; my-int-value=&quot;123&quot; /&gt;
+    &lt;ExampleElement my-float-value=&quot;3.14&quot; my-list-of-ints=&quot;1,2,3&quot; /&gt;
+    &lt;ExampleElement my-string-value=&quot;Hello World&quot; my-int-value=&quot;123&quot; /&gt;
+    &lt;ExampleElement my-texture=&quot;project://database/Assets/MyTexture.png&quot; /&gt;
+    &lt;ExampleElement my-color=&quot;#FF0000FF&quot; /&gt;
+    &lt;ExampleElement my-type=&quot;UnityEngine.UIElements.Button, UnityEngine.UIElementsModule&quot; /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>Create complex custom attributes</h3>
+
+<p>You can use struct or class instances as attributes, and lists of struct or class instances as attributes. To do so, you must convert them to and from a string and declare a <a href="../ScriptReference/UIElements.UxmlAttributeConverter_1.html"><code>UxmlAttributeConverter</code></a> to support this conversion.</p>
+
+<p>
+<strong>Note</strong>: When you use a class in a list, ensure that its string representation doesn’t contain any commas (<code>,</code>) because commas are used to separate the items.</p>
+
+<p>The following example creates a custom control with custom list attributes:</p>
+
+<pre><code class="lang-cs">using System;
+using System.Collections.Generic;
+using UnityEngine.UIElements;
+
+[Serializable]
+public class MyClassWithData
+{
+    public int myInt;
+    public float myFloat;
+}
+
+[UxmlElement]
+public partial class MyElementWithData : VisualElement
+{
+    [UxmlAttribute]
+    public MyClassWithData someData;
+
+    [UxmlAttribute]
+    public List&lt;MyClassWithData&gt; lotsOfData;
+}
+</code></pre>
+
+<p>The following example converts the custom property and declares a <code>UxmlAttributeConverter</code> to support the conversion:</p>
+
+<pre><code class="lang-cs">using UnityEditor.UIElements;
+
+public class MyClassWithDataConverter : UxmlAttributeConverter&lt;MyClassWithData&gt;
+{
+    public override MyClassWithData FromString(string value)
+    {
+        // Split using a | so that comma (,) can be used by the list.
+        var split = value.Split('|');
+
+        return new MyClassWithData
+        {
+            myInt = int.Parse(split[0]),
+            myFloat = float.Parse(split[1])
+        };
+    }
+
+    public override string ToString(MyClassWithData value) =&gt; $&quot;{value.myInt}|{value.myFloat}&quot;;
+}
+</code></pre>
+
+<p>The following example UXML document uses the custom control:</p>
+
+<pre><code class="lang-cs">&lt;ui:UXML xmlns:ui=&quot;UnityEngine.UIElements&quot;&gt;
+    &lt;MyElementWithData some-data=&quot;1|2.3&quot; lots-of-data=&quot;1|2,3|4,5|6&quot; /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>Create nested custom attributes with <code>UxmlObjectReference</code>
+</h3>
+
+<p>You can use <code>UxmlObjectReference</code> to create nested custom attributes. To do this, you use the <code>UxmlObjectReference</code> attribute to set a name. This name indicates that the <code>UxmlObjects</code> will be parented to an element with that name. This helps you to manage <code>UxmlObjects</code> within elements, especially when elements have multiple <code>UxmlObject</code> fields. By assigning <code>UxmlObjects</code> to specific names within <code>UxmlObjectReference</code>, you can easily tell which <code>UxmlObjects</code> belong to which field, making your project clearer and better organized.</p>
+
+<p>For more information and examples, see <a href="../ScriptReference/UIElements.UxmlObjectReferenceAttribute.html"><code>UxmlObjectReferenceAttribute</code></a>.</p>
+
+<h2>Customize the custom attribute names</h2>
+
+<p>You can customize the attribute name through the <code>name</code> argument of the <code>UxmlAttribute</code> attribute.</p>
+
+<p>The following example creates a custom control with customized attribute names:</p>
+
+<pre><code class="lang-cs">using UnityEngine.UIElements;
+
+[UxmlElement]
+public partial class CustomAttributeNameExample : VisualElement
+{
+    [UxmlAttribute(&quot;character-name&quot;)]
+    public string myStringValue { get; set; }
+
+    [UxmlAttribute(&quot;credits&quot;)]
+    public float myFloatValue { get; set; }
+
+    [UxmlAttribute(&quot;level&quot;)]
+    public int myIntValue { get; set; }
+
+    [UxmlAttribute(&quot;usage&quot;)]
+    public UsageHints myEnumValue { get; set; }
+}
+</code></pre>
+
+<p>The following example UXML document uses the custom attribute names: </p>
+
+<pre><code class="lang-cs">&lt;ui:UXML xmlns:ui=&quot;UnityEngine.UIElements&quot;&gt;
+    &lt;CustomAttributeNameExample character-name=&quot;Karl&quot; credits=&quot;1.23&quot; level=&quot;1&quot; usage=&quot;DynamicColor&quot; /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>If you’ve changed the name of an attribute, to ensure that the UXML files with the previous attribute name can still be used, add the <a href="../ScriptReference/UIElements.UxmlAttributeAttribute-obsoleteNames.html"><code>obsoleteNames</code></a> argument to the <code>UxmlAttribute</code> attribute. </p>
+
+<p>The following example creates a custom control with customized and obsolete attributes names:</p>
+
+<pre><code class="lang-cs">using UnityEngine.UIElements;
+
+[UxmlElement]
+public partial class CharacterDetails : VisualElement
+{
+    [UxmlAttribute(&quot;character-name&quot;, &quot;npc-name&quot;)]
+    public string npcName { get; set; }
+
+    [UxmlAttribute(&quot;character-health&quot;, &quot;health&quot;)]
+    public float health { get; set; }
+}
+</code></pre>
+
+<p>The following example UXML document uses obsolete names:</p>
+
+<pre><code class="lang-cs">&lt;ui:UXML xmlns:ui=&quot;UnityEngine.UIElements&quot;&gt;
+    &lt;CharacterDetails npc-name=&quot;Haydee&quot; health=&quot;100&quot; /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h2>Add attribute decorators in UI Builder</h2>
+
+<p>You can add the following decorator attributes on custom attribute fields. When you add a decorator attribute, the corresponding UI controls, such as a slider for <a class="tooltipMoreInfoLink" href="../ScriptReference/RangeAttribute.html"><code>Range</code></a>, are displayed in the UI Builder’s <span class="tooltip"><strong>Inspector</strong><span class="tooltiptext">A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. <a href="UsingTheInspector.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Inspector">Glossary</a></span></span></span> tab:</p>
+
+<ul>
+<li><a href="../ScriptReference/TextAreaAttribute.html"><code>TextArea</code></a></li>
+<li><a href="../ScriptReference/TooltipAttribute.html"><code>Tooltip</code></a></li>
+<li><a href="../ScriptReference/RangeAttribute.html"><code>Range</code></a></li>
+<li><a href="../ScriptReference/HeaderAttribute.html"><code>Header</code></a></li>
+<li><a href="../ScriptReference/MinAttribute.html"><code>Min</code></a></li>
+<li><a href="../ScriptReference/MultilineAttribute.html"><code>Multiline</code></a></li>
+<li><a href="../ScriptReference/SpaceAttribute.html"><code>Space</code></a></li>
+<li><a href="../ScriptReference/DelayedAttribute.html"><code>Delayed</code></a></li>
+</ul>
+
+<p>The following example creates a custom control with decorators on its attribute fields:</p>
+
+<pre><code class="lang-cs">using UnityEngine.UIElements;
+using UnityEngine;
+
+[UxmlElement]
+public partial class ExampleText : VisualElement
+{
+    [TextArea, UxmlAttribute]
+    public string myText;
+
+    [Header(&quot;My Header&quot;)]
+    [Range(0, 100)]
+    [UxmlAttribute]
+    public int rangedInt;
+
+    [Tooltip(&quot;My custom tooltip&quot;)]
+    [Min(10)]
+    [UxmlAttribute]
+    public int minValue = 100;
+}
+</code></pre>
+
+<p>The UI Builder displays the attributes with the decorators:</p>
+
+<figure>
+<img src="../StaticFiles/ScriptRefImages/UIB-decorators.png" alt="Attributes with the decorators">
+<figcaption>Attributes with the decorators</figcaption>
+</figure>
+
+<h2>Add custom property drawer in UI Builder</h2>
+
+<p>You can add <a href="../ScriptReference/PropertyDrawer.html">custom property drawers</a> on fields in the UI Builder.</p>
+
+<p>The following example creates a custom control with a custom <span class="tooltip"><strong>property drawer</strong><span class="tooltiptext">A Unity feature that allows you to customize the look of certain controls in the Inspector window by using attributes on your scripts, or by controlling how a specific Serializable class should look <a class="tooltipMoreInfoLink" href="editor-PropertyDrawers.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#PropertyDrawer">Glossary</a></span></span></span>:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MyDrawerAttribute : PropertyAttribute { }
+
+[UxmlElement]
+public partial class MyDrawerExample : Button
+{
+    [UxmlAttribute]
+    public Color myColor;
+
+    [MyDrawer, UxmlAttribute]
+    public string myText;
+}
+</code></pre>
+
+<p>To access other serialized properties, prepend the name with <code>serializedData</code>. The following code example uses <code>serializedData.myColor</code> to find the <code>myColor</code> attribute:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
+
+[CustomPropertyDrawer(typeof(MyDrawerAttribute))]
+public class MyDrawerAttributePropertyDrawer : PropertyDrawer
+{
+    public override VisualElement CreatePropertyGUI(SerializedProperty property)
+    {
+        var row = new VisualElement { style = { flexDirection = FlexDirection.Row } };
+        var textField = new TextField(&quot;My Text&quot;) { style = { flexGrow = 1 } };
+        var button = new Button { text = &quot;:&quot; };
+        button.clicked += () =&gt; textField.value = &quot;RESET&quot;;
+
+        // Get the parent property
+        var parentPropertyPath = property.propertyPath.Substring(0, property.propertyPath.LastIndexOf('.'));
+        var parent = property.serializedObject.FindProperty(parentPropertyPath);
+
+        var colorProp = parent.FindPropertyRelative(&quot;myColor&quot;);
+        textField.TrackPropertyValue(colorProp, p =&gt;
+        {
+            row.style.backgroundColor = p.colorValue;
+        });
+
+        row.style.backgroundColor = colorProp.colorValue;
+        row.Add(textField);
+        row.Add(button);
+        textField.BindProperty(property);
+
+        return row;
+    }
+}
+</code></pre>
+
+<p>The custom property drawer looks like the following:</p>
+
+<figure>
+<img src="../StaticFiles/ScriptRefImages/UIB-propertydrawer.gif" alt="Custom property drawer with a color picker">
+<figcaption>Custom property drawer with a color picker</figcaption>
+</figure>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="UIE-create-custom-controls.html">Create custom controls</a></li>
+<li><a href="../ScriptReference/PropertyDrawer.html"><code>PropertyDrawer</code></a></li>
+<li><a href="../ScriptReference/DecoratorDrawer.html"><code>DecoratorDrawer</code></a></li>
+<li><a href="../ScriptReference/UIElements.UxmlObjectReferenceAttribute.html"><code>UxmlObjectReferenceAttribute</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-custom-controls.html"></a></span><div class="tip">Create a custom control</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-bind-custom-control-to-data.html"></a></span><div class="tip">Bind custom controls to data</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-04-25.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
